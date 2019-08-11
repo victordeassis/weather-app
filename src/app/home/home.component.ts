@@ -21,11 +21,19 @@ export class HomeComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
+    // It will get the data when it starts the view.
+    this.getDataFromApi();
+    // Will trigger a setInterval that will check again if any temperature has changed in 3 min.
+    setInterval(() => this.getDataFromApi(), 180 * 1000);
+  }
+
+  getDataFromApi(): any {
     // Group
     // "http://api.openweathermap.org/data/2.5/group?id=3936456,3448439,3435910,3871336&units=metric&appid=b67fa5a827a488bdc84e7e36d78d2009"
     // Solo
     // "http://api.openweathermap.org/data/2.5/weather?q=Lima&units=metric&appid=b67fa5a827a488bdc84e7e36d78d2009"
-    // Using a group call with city ID to just use call it once
+
+    // Using a group call with city ID to just use call it once.
     axios
       .get(
         "http://api.openweathermap.org/data/2.5/group?id=3936456,3448439,3435910,3871336&units=metric&appid=b67fa5a827a488bdc84e7e36d78d2009"
@@ -45,7 +53,6 @@ export class HomeComponent implements OnInit {
       responseDataArray.list.forEach(responseData => {
         if (cityInfo.name === responseData.name.toLowerCase()) {
           // Removed the after comma digits with bitwise or 0
-          console.log(responseData.main.temp);
           responseData.main.temp = responseData.main.temp | 0;
           cityInfo.temperature = responseData.main.temp;
         }
