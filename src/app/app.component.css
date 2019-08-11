@@ -1,0 +1,13 @@
+/* Global CSS */
+
+body, h1 {
+    font-family: 'Poppins', sans-serif;
+}
+
+.logo_container {
+    text-align: center;
+}
+
+.logo {
+    font-size: 96px;
+}
