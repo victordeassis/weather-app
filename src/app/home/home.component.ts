@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit {
     // Using a group call with city ID to just use call it once.
     axios
       .get(
-        "http://api.openweathermap.org/data/2.5/group?id=3936456,3448439,3435910,3871336&units=metric&appid=b67fa5a827a488bdc84e7e36d78d2009"
+        "https://api.openweathermap.org/data/2.5/group?id=3936456,3448439,3435910,3871336&units=metric&appid=b67fa5a827a488bdc84e7e36d78d2009"
       )
       .then(response => {
         // handle success
