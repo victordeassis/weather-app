@@ -1,13 +1,14 @@
-/* Global CSS */
-
-body, h1 {
-    font-family: 'Poppins', sans-serif;
-}
-
 .logo_container {
     text-align: center;
 }
 
 .logo {
     font-size: 96px;
+    cursor: pointer;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20vh;
 }

@@ -2,14 +2,6 @@ h1 {
     color: white;
 }
 
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    max-width: 55vw;
-    margin: 0 auto;
-}
-
 .city_temperature {
     font-weight: 400;
     font-size: 4rem;
