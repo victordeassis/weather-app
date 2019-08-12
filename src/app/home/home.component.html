@@ -1,5 +1,5 @@
-<div style="display: flex; flex-wrap: wrap; justify-content: center;">
-    <div class="weather_card" [style.backgroundImage]="'url('+ city.image +')'" style="object-fit: fill" *ngFor="let city of cities">
+<div class="container">
+    <div (click)="navigateToCityInfo(city)" class="weather_card" [style.backgroundImage]="'url('+ city.image +')'" style="object-fit: fill" *ngFor="let city of cities">
         <h1 class="city_temperature">{{ city.temperature }}º</h1>
         <h1 class="city_name">{{ city.name | titlecase }}</h1>
     </div>

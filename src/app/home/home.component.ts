@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 import axios from "axios";
 
 @Component({
@@ -18,7 +19,7 @@ export class HomeComponent implements OnInit {
     { name: "sao paulo", temperature: "", image: "../../assets/sao_pablo.jpg" }
   ];
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit() {
     // It will get the data when it starts the view.
@@ -58,5 +59,10 @@ export class HomeComponent implements OnInit {
         }
       });
     });
+  }
+
+  navigateToCityInfo(city) {
+    localStorage.setItem("city", JSON.stringify(city));
+    this.router.navigateByUrl("/city-info");
   }
 }
